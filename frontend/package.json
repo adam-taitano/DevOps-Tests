@@ -22,6 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --passWithNoTests",
@@ -45,9 +47,10 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://adam-taitano.github.io/DevOps-Tests/",
+  "homepage": "https://adam-taitano.github.io/DevOps-Tests",
   "devDependencies": {
     "customize-cra": "^1.0.0",
+    "gh-pages": "^4.0.0",
     "react-app-rewired": "^2.2.1"
   }
 }

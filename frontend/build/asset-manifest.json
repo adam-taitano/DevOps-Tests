@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DevOps-Tests/static/css/main.15be4434.css",
+    "main.js": "/DevOps-Tests/static/js/main.6fef7a70.js",
+    "index.html": "/DevOps-Tests/index.html",
+    "main.15be4434.css.map": "/DevOps-Tests/static/css/main.15be4434.css.map",
+    "main.6fef7a70.js.map": "/DevOps-Tests/static/js/main.6fef7a70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15be4434.css",
+    "static/js/main.6fef7a70.js"
+  ]
+}
