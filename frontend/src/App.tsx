@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HashRouter, BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { HashRouter, Outlet, Route, Routes } from "react-router-dom"; // remember to import/change HashRouter to BrowserRouter if not gh-pages
 import AppBar from './Components/AppBar';
 import LandingPage from './Components/LandingPage';
 import NotFound from './Components/NotFound';
