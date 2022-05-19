@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
@@ -45,5 +45,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://TaylorKNoah.github.io/FullStack-GroupProject-Spring22/"
+  "homepage": "https://TaylorKNoah.github.io/FullStack-GroupProject-Spring22/",
+  "devDependencies": {
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1"
+  }
 }

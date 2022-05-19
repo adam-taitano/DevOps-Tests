@@ -1,24 +1,19 @@
 import { Box } from "@mui/material";
 import { LANDING } from "../Constants";
 import { Typography } from "@mui/material";
+import { useEffect } from "react";
 
 const LandingPage = () => {
+	useEffect (()=> {
+		console.log("LandingPage has rerendered.")
+	});
+
 	return (
-		<>
-			<Box  mt={15} height={1} display='flex' justifyContent='center'>
-				<Typography variant='h5'>
-					{LANDING.WELCOME}
-				</Typography>
-			</Box>
-			<Box width={1} display='flex' justifyContent='center'>
-				<img  
-					alt='Sharing' 
-					src={LANDING.imgsrc}
-					width={1200}
-				/>
-			</Box>
-		</>
-		
+		<Box  display='flex' justifyContent='center'>
+			<Typography variant='h4'>
+				{LANDING.WELCOME}
+			</Typography>
+		</Box>
 	);
 }
 

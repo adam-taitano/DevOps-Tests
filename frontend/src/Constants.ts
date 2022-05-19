@@ -1,3 +1,14 @@
+export const BASENAME =  process.env.PUBLIC_URL
+
+export const ROUTER_PATHS = {
+	landing: '/',
+	lend: '/lend',
+	request: '/request',
+	login: '/login',
+	profile: '/profile',
+	error: '*'
+}
+
 export const E404 = {
 	TITLE: '404 - Not Found!',
 	MESSAGE: 'Looks Like something went wrong. Better ',
@@ -16,4 +27,25 @@ export const APPBAR = {
 export const LANDING = {
 	WELCOME: '	Welcome to Lend a hand! Click one of the above buttons to get started!',
 	imgsrc: 'https://thumbs.dreamstime.com/b/siblings-relationship-kids-sharing-delicious-fruit-together-sister-brother-holding-apple-siblings-relationship-kids-sharing-145343792.jpg'
+}
+
+export const LEND = {
+	welcome: 'Welcome the Lend Page!',
+	subtitle: 'You can search through requested items or create a lend post!'
+}
+
+export const REQUEST = {
+	welcome: 'Welcome the Request Page!',
+	subtitle: 'You can search through items out for lending or create a request post!'
+}
+
+export const PROFILE = {
+	welcome: 'Welcome the Profile Page!',
+	subtitle: 'This is probably a Strectch Goal.'
+}
+
+export const LOGIN = {
+	SubmitStatement1: 'Welcome ',
+	SubmitStatement2: ' !',
+	Title: 'Login'
 }
