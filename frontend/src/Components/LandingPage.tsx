@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const LandingPage = () => {
 	useEffect (()=> {
-		console.log("LandingPage has rerendered.")
+		console.log("LandingPage has rerendered - new deploy.")
 	});
 
 	return (
