@@ -54,7 +54,7 @@ jobs:
         path: frontend/build
 
     - name: Deploy to gh-pages
-      run: npm init && npm run deploy
+      run: npm run deploy
       working-directory: ./frontend/build
 #       uses: peaceiris/actions-gh-pages@v3 # from gh-actions marketplace
 #       with:
