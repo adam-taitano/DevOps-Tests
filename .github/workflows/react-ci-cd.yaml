@@ -7,56 +7,73 @@ on:
   pull_request:
     branches:
       - main
-
+      
 jobs:
-  build:
-    name: Build
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
-        
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14
-    
-    - name: Install NPM packages
-      run: npm ci                   # based on package-lock.json
-    
-    - name: Build project
-      run: npm run build
-    
-    - name: Run tests
-      run: npm run test
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-    - name: Upload production-ready build files
-      uses: actions/upload-artifact@v2
-      with:
-        name: production-files
-        path: frontend/build               # used to deploy contents in this directory to gh-pages branch
-  
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' # validates current branch is master
+      - name: Install and Build 🔧 
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages 
+          folder: build 
+#   build:
+#     name: Build
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: ./frontend
+        
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
     
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: production-files
-        path: frontend/build
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: frontend/build
+#     - name: Install Node.js
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: 14
+    
+#     - name: Install NPM packages
+#       run: npm ci                   # based on package-lock.json
+    
+#     - name: Build project
+#       run: npm run build
+    
+#     - name: Run tests
+#       run: npm run test
+
+#     - name: Upload production-ready build files
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: production-files
+#         path: frontend/build               # used to deploy contents in this directory to gh-pages branch
+  
+#   deploy:
+#     name: Deploy
+#     needs: build
+#     runs-on: ubuntu-latest
+#     if: github.ref == 'refs/heads/main' # validates current branch is master
+    
+#     steps:
+#     - name: Download artifact
+#       uses: actions/download-artifact@v2
+#       with:
+#         name: production-files
+#         path: frontend/build
+#     - name: Deploy
+#       uses: JamesIves/github-pages-deploy-action@v4
+#       with:
+#         branch: gh-pages
+#         folder: frontend/build
 
 #     - name: Deploy to gh-pages
 #       run: npm run deploy
