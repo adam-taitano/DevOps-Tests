@@ -54,7 +54,8 @@ jobs:
         path: frontend/build
 
     - name: Deploy to gh-pages
-      run: npm run deploy
+      with:
+        path: frontend/build
 #       uses: peaceiris/actions-gh-pages@v3 # from gh-actions marketplace
 #       with:
 #         github_token: ${{ secrets.GITHUB_TOKEN }} # might need to edit permissions here
